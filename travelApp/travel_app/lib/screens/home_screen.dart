@@ -1,6 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api, always_specify_types
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -19,10 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _currentTab = 0;
 
-  final List<IconData> _icons = [
+  final List<IconData> _icons = <IconData> [
     FontAwesomeIcons.plane,
-    FontAwesomeIcons.bed,
-    FontAwesomeIcons.personWalking,
+    FontAwesomeIcons.car,
+    FontAwesomeIcons.ship,
     FontAwesomeIcons.motorcycle,
   ];
 
@@ -60,10 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 30),
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
+            const Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
               child: AppBoldedText(
-                text: 'Flutter travel',
+                text: 'Travel App',
               ),
             ),
             const SizedBox(height: 20),
@@ -95,6 +92,13 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.search,
+              size: 30,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.monetization_on_rounded,
               size: 30,
             ),
             label: '',
