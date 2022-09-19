@@ -1,5 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api, always_specify_types
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,6 +5,7 @@ import 'package:travel_app/models/activity_model.dart';
 import 'package:travel_app/models/destination_model.dart';
 import 'package:travel_app/widgets/app_bolded_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
+import 'package:travel_app/widgets/image_container.dart';
 
 class DestinationScreen extends StatefulWidget {
   final Destination destination;
@@ -44,7 +43,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30.0),
-                    boxShadow: const [
+                    boxShadow: const <BoxShadow>[
                       BoxShadow(
                         color: Colors.black26,
                         offset: Offset(0, 2),
@@ -54,12 +53,9 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   ),
                   child: Hero(
                     tag: widget.destination.imageUrl,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: Image(
-                        image: AssetImage(widget.destination.imageUrl),
-                        fit: BoxFit.cover,
-                      ),
+                    child: ImageContainer(
+                      height: 160,
+                      imageUrl: AssetImage(widget.destination.imageUrl),
                     ),
                   ),
                 ),
@@ -243,14 +239,10 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       left: 20,
                       top: 15,
                       bottom: 15,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image(
-                          width: 130,
-                          image: AssetImage(
-                            activity.imageUrl,
-                          ),
-                          fit: BoxFit.cover,
+                      child: ImageContainer(
+                        width: 130,
+                        imageUrl: AssetImage(
+                          activity.imageUrl,
                         ),
                       ),
                     ),

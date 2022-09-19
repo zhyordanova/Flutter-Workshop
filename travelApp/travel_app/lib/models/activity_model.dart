@@ -1,12 +1,10 @@
-// ignore_for_file: always_specify_types
-
 class Activity {
-  String imageUrl;
-  String name;
-  String type;
-  List<String> startTimes;
-  int rating;
-  int price;
+  final String imageUrl;
+  final String name;
+  final String type;
+  final List<String> startTimes;
+  final int rating;
+  final int price;
 
   Activity({
     required this.imageUrl,

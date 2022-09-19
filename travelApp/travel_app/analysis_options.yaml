@@ -23,8 +23,8 @@ linter:
   # producing the lint.
   rules:
     required_trailing_commas: true
-    always_declare_return_types: true
-    always_specify_types: true
+    # always_declare_return_types: true
+    # always_specify_types: true
     always_use_package_imports: true
 
 # Additional information about this file can be found at

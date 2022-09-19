@@ -1,13 +1,11 @@
-// ignore_for_file: always_specify_types
-
 import 'package:travel_app/models/activity_model.dart';
 
 class Destination {
-  String imageUrl;
-  String city;
-  String country;
-  String description;
-  List<Activity> activities;
+  final String imageUrl;
+  final String city;
+  final String country;
+  final String description;
+  final List<Activity> activities;
 
   Destination({
     required this.imageUrl,

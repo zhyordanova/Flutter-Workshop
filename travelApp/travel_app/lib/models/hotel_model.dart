@@ -1,10 +1,8 @@
-// ignore_for_file: always_specify_types
-
 class Hotel {
-  String imageUrl;
-  String name;
-  String address;
-  int price;
+  final String imageUrl;
+  final String name;
+  final String address;
+  final int price;
 
   Hotel({
     required this.imageUrl,

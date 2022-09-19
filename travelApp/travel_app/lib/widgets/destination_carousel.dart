@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print, always_specify_types
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,6 +5,8 @@ import 'package:travel_app/models/destination_model.dart';
 import 'package:travel_app/screens/destination_screen.dart';
 import 'package:travel_app/widgets/app_bolded_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
+import 'package:travel_app/widgets/carousel_header.dart';
+import 'package:travel_app/widgets/image_container.dart';
 
 class DestinationCarousel extends StatelessWidget {
   const DestinationCarousel({Key? key}) : super(key: key);
@@ -15,27 +15,10 @@ class DestinationCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              AppBoldedText(
-                text: 'Top Destinations',
-                size: 22,
-                letterSpacing: 1.5,
-              ),
-              GestureDetector(
-                onTap: () => print('See All'),
-                child: AppBoldedText(
-                  text: 'See All',
-                  size: 16,
-                  color: Theme.of(context).primaryColor,
-                  weight: FontWeight.w600,
-                  letterSpacing: 1,
-                ),
-              ),
-            ],
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: CarouselHeader(
+            text: 'Top Destinations',
           ),
         ),
         Container(
@@ -73,7 +56,7 @@ class DestinationCarousel extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(9),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +85,7 @@ class DestinationCarousel extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: const [
+                          boxShadow: const <BoxShadow>[
                             BoxShadow(
                               color: Colors.black26,
                               offset: Offset(0, 2),
@@ -114,14 +97,9 @@ class DestinationCarousel extends StatelessWidget {
                           children: <Widget>[
                             Hero(
                               tag: destination.imageUrl,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image(
-                                  height: 180,
-                                  width: 180,
-                                  image: AssetImage(destination.imageUrl),
-                                  fit: BoxFit.cover,
-                                ),
+                              child: ImageContainer(
+                                width: 180,
+                                imageUrl: AssetImage(destination.imageUrl),
                               ),
                             ),
                             Positioned(

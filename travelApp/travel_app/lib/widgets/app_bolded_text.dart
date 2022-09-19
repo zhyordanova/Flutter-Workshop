@@ -1,17 +1,15 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 
 class AppBoldedText extends StatelessWidget {
-  double size;
+  final double size;
   final String text;
   final Color color;
-  double? letterSpacing;
+  final double? letterSpacing;
   final FontWeight? weight;
   final TextOverflow? textOverflow;
-  int? maxLinesAllowed;
+  final int? maxLinesAllowed;
 
-  AppBoldedText({
+  const AppBoldedText({
     Key? key,
     this.size = 30,
     required this.text,
