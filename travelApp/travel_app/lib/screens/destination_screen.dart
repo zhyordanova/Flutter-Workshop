@@ -16,7 +16,7 @@ class DestinationScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _DestinationScreenState createState() => _DestinationScreenState();
+  State<DestinationScreen> createState() => _DestinationScreenState();
 }
 
 class _DestinationScreenState extends State<DestinationScreen> {
